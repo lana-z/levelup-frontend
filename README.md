@@ -1,4 +1,4 @@
-#LevelUp Economy
+# LevelUp Economy
 
 Welcome to this [Next.js](https://nextjs.org/) project which will soon be the website for the LevelUp Economy.
 
