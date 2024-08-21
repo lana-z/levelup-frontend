@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#LevelUp Economy
+
+Welcome to this [Next.js](https://nextjs.org/) project which will soon be the website for the LevelUp Economy.
+
+## Author
+- [Lana Zumbrunn](https://github.com/lana-z)
+
 
 ## Getting Started
 
