@@ -1,107 +1,113 @@
+"use client";  
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+  const [buildingVibrant, setBuildingVibrant] = useState("economic ecosystems.");
+
+  useEffect(() => {
+    const texts = ["economic ecosystems.", "early stage startups.", "growth stage startups."];
+    let index = 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % texts.length;
+      setBuildingVibrant(texts[index]);
+    }, 3000); // 3 seconds
+
+    return () => clearInterval(interval); 
+  }, []);
+
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-24">
-      <div className="z-10 items-center justify-between w-full max-w-5xl font-mono text-sm lg:flex">
-        <div className="fixed bottom-0 left-0 flex items-end justify-center w-full h-48 bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="flex gap-2 p-8 pointer-events-none place-items-center lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          </a>
-        </div>
-      </div>
-
-      <div >
-        <Image
-          src="/levelup-logo-transparent.png"
-          alt="LevelUp Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <h1 className="mb-8 text-4xl font-bold text-center">
-        Building vibrant economic ecosystems.
-      </h1>
+    <main className="flex flex-col items-center justify-between min-h-screen">
       
-      <h3 className="mb-8 text-2xl text-center">  
-      Our clients are diverse organizations, from foundations and enterprises to start-ups, all seeking a partner capable of guiding them from research and strategy to transformative design and world-class products.
-      </h3>
+      {/* Hero Section */}
+      <section className="flex items-center justify-between w-2/3 pb-20 text-left bg-white">
+        <div className="w-1/3">
+          <h1 className="pt-20 pb-3 text-5xl font-bold">
+            Supporting vibrant {""}
+            <span className="transition-all duration-1000 ease-in-out">
+              {buildingVibrant}
+            </span>
+          </h1>
+          <p className="text-balance">
+            Our clients are diverse organizations, from foundations and enterprises to startups, all seeking a partner capable of guiding them from research and strategy to transformative design and world-class products.
+          </p>
+        </div>
+        
+        <div className="w-2/3">
+          <Image
+            src="/placeholder-image.png" 
+            alt="Dynamic Image"
+            width={600}
+            height={400} 
+            className="object-cover pt-10 pl-10"
+          />
+        </div>
+      </section>
 
-      <div className="grid mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+      <div className="grid mx-auto text-center lg:max-w-5xl lg:w-full lg:grid-cols-3 lg:text-left">
+          
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="px-5 py-4 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/accelerators"
+          className="px-5 py-4 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-blue-200"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
+          <h2 className="mb-3 text-2xl font-semibold">
+            Accelerators{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+          <p className="m-0 max-w-[30ch] text-sm opacity-75">
+            Empower your founder cohorts with proven training and customized workshops that meet them where they are.
           </p>
         </a>
 
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="px-5 py-4 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/founders"
+          className="px-5 py-4 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-blue-200"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
+          <h2 className="mb-3 text-2xl font-semibold">
+            Founders{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <p className="m-0 max-w-[30ch] text-sm opacity-75">
+            Transform your startup vision into reality with our research, coaching, and custom consulting services.
           </p>
         </a>
-
+          
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="px-5 py-4 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/funders"
+          className="px-5 py-4 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-blue-200"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
+          <h2 className="mb-3 text-2xl font-semibold">
+            Funders{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="px-5 py-4 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <p className="m-0 max-w-[30ch] text-sm opacity-75">
+            Discover what's missing with our ecosystem analysis and provide holistic support that nurtures high-potential startups and drives strong results.
           </p>
         </a>
       </div>
+
+      {/* Understands Section */}
+      <section className="w-full py-16 text-center bg-green-100">
+        <h2 className="text-2xl">
+          We are your partner who deeply understands the startup ecosystem, founder life, and product development lifecycle. Let's work together to ensure your success.
+        </h2>
+      </section>
+
+      {/* Global Tech Sustainable Section */}
+      <section className="w-full py-16 text-center bg-yellow-100">
+        <h2 className="text-2xl">
+          LevelUp is a global company leveraging technology to advance sustainable economic growth.
+        </h2>
+      </section>
     </main>
   );
 }
