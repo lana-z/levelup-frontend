@@ -20,6 +20,89 @@ body {
   color: #36454F; 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: #111827;
+}
+
 .text-balance {
   text-wrap: balance;
+}
+
+
+.testimonials-container {
+  display: flex;
+  overflow: hidden;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.testimonials-track {
+  display: flex;
+  animation: scroll-left 30s linear infinite;
+}
+
+.testimonial-card {
+  min-width: 20%;
+  margin: 0 1rem;
+  padding: 1.5rem;
+  background-color: #36454F;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.testimonial-card h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.testimonial-card p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testimonial-card .author {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.testimonial-card .author img {
+  margin-right: 1rem;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.highlighted {
+  animation: pulse 1.5s ease-out;
 }
